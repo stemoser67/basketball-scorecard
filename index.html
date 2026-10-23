@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Feuille de match basket</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏀</text></svg>">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <main>
+    <!-- Horloges : chrono du match + 24 secondes -->
+    <section class="clocks">
+      <div class="period">
+        <button class="small" id="periodDown" aria-label="Quart-temps précédent">‹</button>
+        <span id="period">QT 1</span>
+        <button class="small" id="periodUp" aria-label="Quart-temps suivant">›</button>
+      </div>
+      <div class="game-clock" id="gameClock">10:00</div>
+      <div class="shot-clock" id="shotClock" title="Clic = remettre 24 s">24</div>
+      <div class="clock-buttons">
+        <button id="startStop">▶ Lancer</button>
+        <button id="shot14">14 s</button>
+        <button id="shot24">24 s</button>
+      </div>
+    </section>
+
+    <!-- Les deux équipes (remplies par index.js) -->
+    <section class="teams">
+      <article class="team" data-team="home"></article>
+      <article class="team" data-team="away"></article>
+    </section>
+
+    <section class="actions">
+      <button id="undo">↶ Annuler</button>
+      <button id="reset" class="danger">Nouveau match</button>
+    </section>
+
+    <section class="log">
+      <h2>Historique</h2>
+      <ol id="log"></ol>
+    </section>
+  </main>
+
+  <template id="teamTemplate">
+    <input class="name" maxlength="20" aria-label="Nom de l'équipe">
+    <div class="score">0</div>
+    <div class="points">
+      <button data-points="1">+1</button>
+      <button data-points="2">+2</button>
+      <button data-points="3">+3</button>
+    </div>
+    <div class="stats">
+      <div>
+        <span>Fautes</span>
+        <strong class="fouls">0</strong>
+        <button class="small" data-stat="fouls">+</button>
+      </div>
+      <div>
+        <span>Temps-morts</span>
+        <strong class="timeouts">0</strong>
+        <button class="small" data-stat="timeouts">+</button>
+      </div>
+    </div>
+    <p class="bonus" hidden>BONUS</p>
+  </template>
+
+  <script src="index.js"></script>
+</body>
+</html>
