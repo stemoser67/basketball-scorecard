@@ -143,8 +143,3 @@ button.danger { color: var(--danger); }
 .log li { padding: 2px 0; }
 .log li b { color: var(--text); }
 
-@media (max-width: 560px) {
-  .teams { grid-template-columns: 1fr; }
-  .clocks { grid-template-columns: 1fr auto; }
-  .game-clock { grid-column: 1 / -1; grid-row: 1; text-align: center; }
-}
