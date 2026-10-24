@@ -32,6 +32,4 @@ npm run dev
 
 `npm run build` produit une version prête à mettre en ligne dans `dist/`.
 
-Have fun with coding!
-
-Happy coding too!
+Having fun with coding!
